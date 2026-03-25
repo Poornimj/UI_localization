@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-localization
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui-localization
+  template:
+    metadata:
+      labels:
+        app: ui-localization
+    spec:
+      containers:
+        - name: ui-localization
+          image: poornimj/ui_localization:latest
+          ports:
+            - containerPort: 8080
